@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+.wapper {
+  width: 100%;
+  height: 100svb;
+  background-color: #0e1111;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  
+}
+
+.box {
+  padding-top: 20px;
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid yellow;
+}
+
+#form {
+  width: 100%;
+  display: flex;
+  gap: 4px;
+  align-items: baseline;
+}
+
+#input_box {
+  width: 80%;
+  padding: 14px 10px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  color: #0e1111;
+  font-size: 16px;
+}
+
+/* CSS */
+.addtask {
+  width: 20%;
+  font-size: 1.6rem;
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 2rem;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    Ubuntu, sans-serif;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.addtask:disabled {
+  cursor: default;
+}
+
+.addtask:focus {
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+    rgba(50, 151, 211, 0.3) 0 0 0 4px;
+}
+
+.items {
+  width: 100%;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.item {
+  margin-top: 1rem;
+  background: #a3573a;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item_wapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item_wapper .text {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.item .number {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.button {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember", sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.button:hover {
+  background-color: #f7fafa;
+}
+
+.button:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  outline: 0;
+}
