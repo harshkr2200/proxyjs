@@ -35,9 +35,26 @@ const deleteItem = (id) => {
 // add todo fun
 const addNewTodo = (todo) => {
   if (todo) {
-    storeProxy.todos = [...storeProxy.todos, todo];
+    storeProxy.todos = [...storeProxy.todos, ...todo];
   }
 };
-export { addNewTodo, deleteItem };
+
+const updateTodo = (edit_id, todo) => {
+  let todoData = storeProxy.todos?.map((val) => {
+    if (val.id === edit_id) {
+      const data = todo.task;
+      return {
+        ...val,
+        task: data,
+      };
+    } else {
+      return val;
+    }
+  });
+  storeProxy.todos = [...todoData]
+  
+}
+
+export { addNewTodo,updateTodo, deleteItem };
 
 export default storeProxy;

@@ -1,4 +1,4 @@
-import { addNewTodo, deleteItem, storeProxy } from "./store.js";
+import { addNewTodo, deleteItem, storeProxy, updateTodo } from "./store.js";
 import render from "./render.js";
 
 window.addEventListener("storeChange", () => {
@@ -19,15 +19,24 @@ if (getDataFromLocal?.todos.length > 0) {
 const form = document.querySelector("#form");
 const inputBox = document.querySelector("#input_box");
 
+let edit_id = null;
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   let taskValue = inputBox.value;
+  let todoData = [];
   if (taskValue.length) {
-    const newTodo = {
-      id: crypto.randomUUID(),
-      task: taskValue,
-    };
-    addNewTodo(newTodo);
+    if (edit_id !== null) {
+      updateTodo(edit_id, {task : inputBox.value})
+      edit_id=null
+    } else {
+      todoData = [
+        {
+          id: crypto.randomUUID(),
+          task: taskValue,
+        },
+      ];
+      addNewTodo(todoData);
+    }
   }
   inputBox.value = "";
 });
@@ -41,5 +50,9 @@ listItem.addEventListener("click", (event) => {
   } else if (event.target.classList.contains("done")) {
     const element = event.target.closest(".item");
     element.style.backgroundColor = "green";
+  } else {
+    edit_id = elementId;
+    const editdata = storeProxy.todos.find((val) => val.id === edit_id);
+    inputBox.value = editdata.task;
   }
 });

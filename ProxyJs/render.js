@@ -9,6 +9,7 @@ const render = () => {
       <div class="text">${todo.task}</div>
     </div>
     <div class="action" data-index=${index}>
+    <button class="edit button">Edit</button>
       <button class="done button">Done</button>
       <button class="delete button">Delete</button>
     </div>
